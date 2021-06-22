@@ -8,17 +8,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
-public class LoginGmailTest{
-	WebDriver driver;
+public class LoginGmailTest extends LoginPage {
 	
+
+public LoginGmailTest(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 @BeforeMethod
   public void setup() 
   {
@@ -33,9 +35,7 @@ public class LoginGmailTest{
   public void Validlogin()
 	{
 		try {
-
-			LoginPage obj=new LoginPage(driver);
-			obj.dologin("xyzseleniumtest@gmail.com", "passwordtest@01");
+           dologin("xyzseleniumtest@gmail.com", "passwordtest@01");
 			}
 		catch(Exception e)
 		{
@@ -47,9 +47,8 @@ public class LoginGmailTest{
   public void UserProfilecheck()
  	{
  		try {
- 			LoginPage obj=new LoginPage(driver);
-			obj.dologin("xyzseleniumtest@gmail.com", "passwordtest@01");
- 			obj.Logincheck();
+			dologin("xyzseleniumtest@gmail.com", "passwordtest@01");
+ 			Logincheck();
  			}
  		catch(Exception e)
  		{
@@ -61,9 +60,8 @@ public class LoginGmailTest{
   public void InValidlogin()
 	{
 		try {
-			LoginPage obj=new LoginPage(driver);
-			obj.dologin("xyzseleniumtest@gmail.com", "password@01");
-			obj.ErrorMsgcheck();	
+			dologin("xyzseleniumtest@gmail.com", "password@01");
+			ErrorMsgcheck();	
 			}
 		catch(Exception e)
 		{

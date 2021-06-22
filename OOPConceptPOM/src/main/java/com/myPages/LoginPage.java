@@ -3,10 +3,9 @@ package com.myPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 public class LoginPage{
-	WebDriver driver;
+	public WebDriver driver;
 	By emailId=By.id("identifierId");
 	By NextButton=By.xpath("//*[@id='identifierNext']/div[1]");
 	By Password=By.xpath("//*[@id='password']/div[1]/div/div[1]/input");

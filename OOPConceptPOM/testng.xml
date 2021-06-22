@@ -3,9 +3,19 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.myTestPages.EbayTestpage"/>
-      
-      <class name="com.myTestPages.LoginGmailTest"/>
+      <class name="com.myTestPages.EbayTestpage">
+        <methods>
+        <include name="">setup</include>
+        <include name="">EbaySearchItem</include>
+        <include name="">EbayvalidatePrice</include>
+      </methods>
+      </class>
+      <class name="com.myTestPages.LoginGmailTest">
+      <methods>
+        <include name="">setup</include>
+        <include name="">Validlogin</include>
+      </methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
